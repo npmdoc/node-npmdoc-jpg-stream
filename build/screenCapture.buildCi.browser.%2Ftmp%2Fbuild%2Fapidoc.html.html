@@ -1,0 +1,1035 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/devongovett/jpg-stream">jpg-stream (v1.1.1)</a>
+</h1>
+<h4>A streaming JPEG encoder and decoder</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream">module jpg-stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder">
+            function <span class="apidocSignatureSpan">jpg-stream.</span>Decoder
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder">
+            function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder
+            <span class="apidocSignatureSpan">(width, height, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_">
+            function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder.super_
+            <span class="apidocSignatureSpan">(width, height, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jpg-stream.</span>Decoder.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jpg-stream.</span>Encoder.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jpg-stream.</span>Encoder.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">jpg-stream.</span>mime</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Decoder">module jpg-stream.Decoder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder.Decoder">
+            function <span class="apidocSignatureSpan">jpg-stream.</span>Decoder
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder.probe">
+            function <span class="apidocSignatureSpan">jpg-stream.Decoder.</span>probe
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder.super_">
+            function <span class="apidocSignatureSpan">jpg-stream.Decoder.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Decoder.prototype">module jpg-stream.Decoder.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder.prototype._flush">
+            function <span class="apidocSignatureSpan">jpg-stream.Decoder.prototype.</span>_flush
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Decoder.prototype._transform">
+            function <span class="apidocSignatureSpan">jpg-stream.Decoder.prototype.</span>_transform
+            <span class="apidocSignatureSpan">(data, encoding, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Encoder">module jpg-stream.Encoder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.Encoder">
+            function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder
+            <span class="apidocSignatureSpan">(width, height, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.</span>super_
+            <span class="apidocSignatureSpan">(width, height, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Encoder.prototype">module jpg-stream.Encoder.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.prototype._endFrame">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_endFrame
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.prototype._start">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_start
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.prototype._writePixels">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_writePixels
+            <span class="apidocSignatureSpan">(data, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>supportedColorSpaces</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Encoder.super_">module jpg-stream.Encoder.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.super_">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jpg-stream.Encoder.super_.prototype">module jpg-stream.Encoder.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._end">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_end
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._endFrame">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_endFrame
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._flush">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_flush
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._start">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_start
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._startFrame">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_startFrame
+            <span class="apidocSignatureSpan">(frame, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._transform">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_transform
+            <span class="apidocSignatureSpan">(data, encoding, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype._writePixels">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_writePixels
+            <span class="apidocSignatureSpan">(data, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jpg-stream.Encoder.super_.prototype.addFrame">
+            function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>addFrame
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream" id="apidoc.module.jpg-stream">module jpg-stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder" id="apidoc.element.jpg-stream.Decoder">
+        function <span class="apidocSignatureSpan">jpg-stream.</span>Decoder
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JPEGDecoder(opts) {
+  Transform.call(this);
+  this.decoder = new Decoder;
+
+  if (opts &amp;&amp; opts.width &amp;&amp; opts.height)
+    this.decoder.setDesiredSize(opts.width, opts.height);
+
+  var self = this;
+  this.decoder.callback = function(type, ptr, len) {
+    switch (type) {
+      case 'outputSize':
+        self.format = {
+          width: self.decoder.width,
+          height: self.decoder.height,
+          colorSpace: self.decoder.colorSpace
+        };
+
+        self.emit('format', self.format);
+        break;
+
+      case 'exif':
+        var buf = new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len));
+        self.emit('meta', exif(buf));
+        break;
+
+      case 'scanline':
+        self.push(new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len)));
+        break;
+
+      case 'end':
+        self.push(null);
+        break;
+
+      case 'error':
+        self.decoder.delete();
+        self.emit('error', new Error(ptr));
+        break;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder" id="apidoc.element.jpg-stream.Encoder">
+        function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder
+        <span class="apidocSignatureSpan">(width, height, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JPEGEncoder(width, height, opts) {
+  PixelStream.apply(this, arguments);
+  if (typeof width === 'object')
+    opts = width;
+
+  this.encoder = new Encoder;
+  this.ended = false;
+
+  var self = this;
+  this.encoder.callback = function(type, ptr, len) {
+    switch (type) {
+      case 'data':
+        self.push(new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len)));
+        break;
+
+      case 'error':
+        self.ended = true;
+        self.encoder.delete();
+        self.emit('error', new Error(ptr));
+        break;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_" id="apidoc.element.jpg-stream.Encoder.super_">
+        function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder.super_
+        <span class="apidocSignatureSpan">(width, height, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PixelStream(width, height, opts) {
+  Transform.call(this);
+
+  if (typeof width === 'object') {
+    opts = width;
+    width = height = 0;
+  }
+
+  this.format = {
+    width: width || 0,
+    height: height || 0,
+    colorSpace: 'rgb'
+  };
+
+  if (typeof opts === 'object') {
+    for (var key in opts)
+      this.format[key] = opts[key];
+  }
+
+  this._consumed = 0;
+  this._state = START;
+  this._frameQueue = [];
+
+  var self = this;
+  this.once('pipe', function(src) {
+    src.on('format', function(format) {
+      // extend the frame object
+      for (var key in format)
+        self.format[key] = format[key]
+    });
+
+    src.on('frame', this.addFrame.bind(this));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Decoder" id="apidoc.module.jpg-stream.Decoder">module jpg-stream.Decoder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder.Decoder" id="apidoc.element.jpg-stream.Decoder.Decoder">
+        function <span class="apidocSignatureSpan">jpg-stream.</span>Decoder
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JPEGDecoder(opts) {
+  Transform.call(this);
+  this.decoder = new Decoder;
+
+  if (opts &amp;&amp; opts.width &amp;&amp; opts.height)
+    this.decoder.setDesiredSize(opts.width, opts.height);
+
+  var self = this;
+  this.decoder.callback = function(type, ptr, len) {
+    switch (type) {
+      case 'outputSize':
+        self.format = {
+          width: self.decoder.width,
+          height: self.decoder.height,
+          colorSpace: self.decoder.colorSpace
+        };
+
+        self.emit('format', self.format);
+        break;
+
+      case 'exif':
+        var buf = new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len));
+        self.emit('meta', exif(buf));
+        break;
+
+      case 'scanline':
+        self.push(new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len)));
+        break;
+
+      case 'end':
+        self.push(null);
+        break;
+
+      case 'error':
+        self.decoder.delete();
+        self.emit('error', new Error(ptr));
+        break;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder.probe" id="apidoc.element.jpg-stream.Decoder.probe">
+        function <span class="apidocSignatureSpan">jpg-stream.Decoder.</span>probe
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">probe = function (buf) {
+  return buf[0] === 0xff &amp;&amp; buf[1] === 0xd8 &amp;&amp; buf[2] === 0xff;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder.super_" id="apidoc.element.jpg-stream.Decoder.super_">
+        function <span class="apidocSignatureSpan">jpg-stream.Decoder.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transform(options) {
+  if (!(this instanceof Transform))
+    return new Transform(options);
+
+  Duplex.call(this, options);
+
+  this._transformState = new TransformState(this);
+
+  var stream = this;
+
+  // start out asking for a readable event once data is transformed.
+  this._readableState.needReadable = true;
+
+  // we have implemented the _read method, and done the other things
+  // that Readable wants before the first _read call, so unset the
+  // sync guard flag.
+  this._readableState.sync = false;
+
+  if (options) {
+    if (typeof options.transform === 'function')
+      this._transform = options.transform;
+
+    if (typeof options.flush === 'function')
+      this._flush = options.flush;
+  }
+
+  // When the writable side finishes, then flush out anything remaining.
+  this.once('prefinish', function() {
+    if (typeof this._flush === 'function')
+      this._flush(function(er) {
+        done(stream, er);
+      });
+    else
+      done(stream);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Decoder.prototype" id="apidoc.module.jpg-stream.Decoder.prototype">module jpg-stream.Decoder.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder.prototype._flush" id="apidoc.element.jpg-stream.Decoder.prototype._flush">
+        function <span class="apidocSignatureSpan">jpg-stream.Decoder.prototype.</span>_flush
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_flush = function (done) {
+  this.decoder.delete();
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Decoder.prototype._transform" id="apidoc.element.jpg-stream.Decoder.prototype._transform">
+        function <span class="apidocSignatureSpan">jpg-stream.Decoder.prototype.</span>_transform
+        <span class="apidocSignatureSpan">(data, encoding, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_transform = function (data, encoding, done) {
+  var buf = data instanceof Uint8Array ? data : new Uint8Array(data);
+  this.decoder.decode(buf);
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Encoder" id="apidoc.module.jpg-stream.Encoder">module jpg-stream.Encoder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.Encoder" id="apidoc.element.jpg-stream.Encoder.Encoder">
+        function <span class="apidocSignatureSpan">jpg-stream.</span>Encoder
+        <span class="apidocSignatureSpan">(width, height, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JPEGEncoder(width, height, opts) {
+  PixelStream.apply(this, arguments);
+  if (typeof width === 'object')
+    opts = width;
+
+  this.encoder = new Encoder;
+  this.ended = false;
+
+  var self = this;
+  this.encoder.callback = function(type, ptr, len) {
+    switch (type) {
+      case 'data':
+        self.push(new Buffer(jpeg.HEAPU8.subarray(ptr, ptr + len)));
+        break;
+
+      case 'error':
+        self.ended = true;
+        self.encoder.delete();
+        self.emit('error', new Error(ptr));
+        break;
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_" id="apidoc.element.jpg-stream.Encoder.super_">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.</span>super_
+        <span class="apidocSignatureSpan">(width, height, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PixelStream(width, height, opts) {
+  Transform.call(this);
+
+  if (typeof width === 'object') {
+    opts = width;
+    width = height = 0;
+  }
+
+  this.format = {
+    width: width || 0,
+    height: height || 0,
+    colorSpace: 'rgb'
+  };
+
+  if (typeof opts === 'object') {
+    for (var key in opts)
+      this.format[key] = opts[key];
+  }
+
+  this._consumed = 0;
+  this._state = START;
+  this._frameQueue = [];
+
+  var self = this;
+  this.once('pipe', function(src) {
+    src.on('format', function(format) {
+      // extend the frame object
+      for (var key in format)
+        self.format[key] = format[key]
+    });
+
+    src.on('frame', this.addFrame.bind(this));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Encoder.prototype" id="apidoc.module.jpg-stream.Encoder.prototype">module jpg-stream.Encoder.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.prototype._endFrame" id="apidoc.element.jpg-stream.Encoder.prototype._endFrame">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_endFrame
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_endFrame = function (done) {
+  if (!this.ended) {
+    this.ended = true;
+    this.encoder.end();
+    this.encoder.delete();
+  }
+
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.prototype._start" id="apidoc.element.jpg-stream.Encoder.prototype._start">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_start
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_start = function (done) {
+  this.encoder.width = this.format.width;
+  this.encoder.height = this.format.height;
+  this.encoder.colorSpace = this.format.colorSpace;
+  this.encoder.quality = this.format.quality || 100;
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.prototype._writePixels" id="apidoc.element.jpg-stream.Encoder.prototype._writePixels">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.prototype.</span>_writePixels
+        <span class="apidocSignatureSpan">(data, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_writePixels = function (data, done) {
+  if (!this.ended) {
+    var buf = data instanceof Uint8Array ? data : new Uint8Array(data);
+    this.encoder.encode(buf);
+  }
+
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Encoder.super_" id="apidoc.module.jpg-stream.Encoder.super_">module jpg-stream.Encoder.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.super_" id="apidoc.element.jpg-stream.Encoder.super_.super_">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transform(options) {
+  if (!(this instanceof Transform))
+    return new Transform(options);
+
+  Duplex.call(this, options);
+
+  this._transformState = new TransformState(this);
+
+  var stream = this;
+
+  // start out asking for a readable event once data is transformed.
+  this._readableState.needReadable = true;
+
+  // we have implemented the _read method, and done the other things
+  // that Readable wants before the first _read call, so unset the
+  // sync guard flag.
+  this._readableState.sync = false;
+
+  if (options) {
+    if (typeof options.transform === 'function')
+      this._transform = options.transform;
+
+    if (typeof options.flush === 'function')
+      this._flush = options.flush;
+  }
+
+  // When the writable side finishes, then flush out anything remaining.
+  this.once('prefinish', function() {
+    if (typeof this._flush === 'function')
+      this._flush(function(er) {
+        done(stream, er);
+      });
+    else
+      done(stream);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jpg-stream.Encoder.super_.prototype" id="apidoc.module.jpg-stream.Encoder.super_.prototype">module jpg-stream.Encoder.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._end" id="apidoc.element.jpg-stream.Encoder.super_.prototype._end">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_end
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_end = function (done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._endFrame" id="apidoc.element.jpg-stream.Encoder.super_.prototype._endFrame">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_endFrame
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_endFrame = function (done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._flush" id="apidoc.element.jpg-stream.Encoder.super_.prototype._flush">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_flush
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_flush = function (done) {
+  this._end(done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._start" id="apidoc.element.jpg-stream.Encoder.super_.prototype._start">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_start
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_start = function (done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._startFrame" id="apidoc.element.jpg-stream.Encoder.super_.prototype._startFrame">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_startFrame
+        <span class="apidocSignatureSpan">(frame, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_startFrame = function (frame, done) {
+  done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._transform" id="apidoc.element.jpg-stream.Encoder.super_.prototype._transform">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_transform
+        <span class="apidocSignatureSpan">(data, encoding, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_transform = function (data, encoding, done) {
+  var self = this;
+
+  // recursive state machine to consume the given data by
+  // calling the correct sequence of functions on our subclass
+  function write(data) {
+    switch (self._state) {
+      case START:
+        // compute the byte size of a single frame
+        self._frameSize = self.format.width * self.format.height * COMPONENTS[self.format.colorSpace];
+        self._inputFormat = copy(self.format);
+
+        self._start(function(err) {
+          if (err) return done(err);
+
+          // emit format object for streams further down the pipes
+          self.emit('format', self.format);
+
+          self._state = FRAME_START;
+          write(data);
+        });
+
+        break;
+
+      case FRAME_START:
+        var frame = self._frameQueue.shift() || {};
+
+        // if the frame object has width and height
+        // properties, recompute the frame size.
+        if (frame.width &amp;&amp; frame.height)
+          self._frameSize = frame.width * frame.height * COMPONENTS[self._inputFormat.colorSpace];
+
+        self._startFrame(frame, function(err) {
+          if (err) return done(err);
+
+          self.emit('frame', frame);
+          self._state = FRAME_DATA;
+          write(data);
+        });
+
+        break;
+
+      case FRAME_DATA:
+        if (data.length === 0)
+          return done();
+
+        // if the frame size is zero, just call frame end
+        if (self._frameSize === 0) {
+          self._state = FRAME_END;
+          write(EMPTY_BUFFER);
+          break;
+        }
+
+        var chunk = data.slice(0, self._frameSize - self._consumed);
+        self._writePixels(chunk, function(err) {
+          if (err) return done(err);
+
+          self._consumed += chunk.length;
+          if (self._consumed === self._frameSize)
+            self._state = FRAME_END;
+
+          write(data.slice(chunk.length));
+        });
+
+        break;
+
+      case FRAME_END:
+        self._endFrame(function(err) {
+          if (err) return done(err);
+
+          self._consumed = 0;
+          self._state = FRAME_START;
+          if (data.length)
+            write(data);
+          else
+            done();
+        });
+
+        break;
+    }
+  }
+
+  write(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype._writePixels" id="apidoc.element.jpg-stream.Encoder.super_.prototype._writePixels">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>_writePixels
+        <span class="apidocSignatureSpan">(data, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_writePixels = function (data, done) {
+  done(new Error('No _writePixels implementation'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jpg-stream.Encoder.super_.prototype.addFrame" id="apidoc.element.jpg-stream.Encoder.super_.prototype.addFrame">
+        function <span class="apidocSignatureSpan">jpg-stream.Encoder.super_.prototype.</span>addFrame
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFrame = function (frame) {
+  this._frameQueue.push(frame);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
